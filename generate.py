@@ -55,8 +55,8 @@ for mod in yaml_data['mods']:
     entry = entry.replace('---created---',f"Created: {mod['created']}")
     entry = entry.replace('---updated---',f" / Updated: {mod['updated']}" if 'updated' in mod else '')
     entry = entry.replace('---forum_link---',li_href("BoardGameGeek Forum Thread",mod['links']['forum']) if 'forum' in mod['links'] else '')
-    entry = entry.replace('---bgg_file_link---',li_href("BoardGameGeek File Page",mod['links']['file'] if 'file' in mod['links'] else ''))
-    entry = entry.replace('---gdrive_link---',li_href("Google Drive File Page",mod['links']['drive'] if 'drive' in mod['links'] else ''))
+    entry = entry.replace('---bgg_file_link---',li_href("BoardGameGeek File Page",mod['links']['file']) if 'file' in mod['links'] else '')
+    entry = entry.replace('---gdrive_link---',li_href("Google Drive File Page",mod['links']['drive']) if 'drive' in mod['links'] else '')
     entries_block += entry + "<br/>"
 stat_keys.sort()
 stat_block = ', '.join(f'{x} [{stats[x]}]' for x in stat_keys)
